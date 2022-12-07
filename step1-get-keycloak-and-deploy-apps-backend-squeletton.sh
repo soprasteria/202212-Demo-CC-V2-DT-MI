@@ -16,7 +16,6 @@ clever create --type jar keycloak-server
 clever link keycloak-server
 # Create the PG addon
 clever addon create postgresql-addon --plan dev --addon-version 11 keycloak-postgres
-
 # Link the addon
-clever service link-addon keycloak-postgres
-clever env set KEYCLOAK_DOMAIN $(clever domain | xargs)
+clever service link-addon keycloak-postgres --alias keycloak-server
+clever env set KEYCLOAK_DOMAIN $(clever domain --alias keycloak-server | xargs) --alias keycloak-server

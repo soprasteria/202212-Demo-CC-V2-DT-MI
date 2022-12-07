@@ -8,7 +8,7 @@ git add .
 git commit -m "clever init"
 
 # Deploy the application
-clever deploy
+clever deploy --alias keycloak-server
 
 # Open Keycloak in your browser
-clever open
+clever open --alias keycloak-server
